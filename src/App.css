@@ -5,22 +5,22 @@
 body {
   padding: 0%;
   margin: 0%;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image:  linear-gradient(135deg,#0000 18.75%,#5E412F 0 31.25%,#0000 0),
-  repeating-linear-gradient(45deg,#5E412F -6.25% 6.25%,#FCEBB6 0 18.75%);
-                      background-size: 100px 100px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: linear-gradient(135deg, #0000 18.75%, #5E412F 0 31.25%, #0000 0),
+    repeating-linear-gradient(45deg, #5E412F -6.25% 6.25%, #FCEBB6 0 18.75%);
+  background-size: 100px 100px;
 }
 
 nav {
   margin: 0;
   padding: .5rem 2rem .5rem 2rem;
-  background-color: rgb(7, 79, 26);
+  background-color: #5E412F;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: white;
   text-decoration: none;
-  z-index: 5;
+
 }
 
 a {
@@ -62,6 +62,7 @@ a {
   color: rgb(5, 0, 0);
   width: fit-content;
 }
+
 .cpContainer .inputGp {
   margin-top: 30px;
   display: flex;
@@ -79,6 +80,7 @@ a {
 .inputGp input {
   height: 40px;
 }
+
 .inputGp textarea {
   height: 150px;
 }
@@ -91,6 +93,7 @@ a {
   cursor: pointer;
   font-size: 18px;
 }
+
 input,
 textarea {
   margin-top: 5px;
@@ -130,17 +133,21 @@ textarea {
   background-repeat: no-repeat;
   background-position: 12px 11px;
 }
+
 .login-with-google-btn:hover {
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25);
 }
+
 .login-with-google-btn:active {
   background-color: #eeeeee;
 }
+
 .login-with-google-btn:focus {
   outline: none;
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25),
     0 0 0 3px #c8dafc;
 }
+
 .login-with-google-btn:disabled {
   filter: grayscale(100%);
   background-color: #ebebeb;
@@ -156,6 +163,7 @@ textarea {
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+  z-index: 1;
 }
 
 .homePage .post {
@@ -178,6 +186,7 @@ textarea {
 .postHeader .title {
   flex: 50%;
 }
+
 .postHeader .deletePost {
   flex: 50%;
   display: flex;
@@ -187,6 +196,7 @@ textarea {
 
 .deletePost button {
   border: none;
+  color: #5E412F;
   background: none;
   font-size: 30px;
   cursor: pointer;
@@ -200,13 +210,18 @@ textarea {
   overflow: hidden;
   overflow-y: auto;
 }
- 
-button {
-  background: rgb(21, 122, 21);
+
+.loginBtn {
+  background: #6b503f;
   border-radius: 5px;
   border: none;
   font-size: 25px;
   padding: 10px 20px;
   color: white;
   cursor: pointer;
+}
+
+.loginBtn:hover {
+  background: #FCEBB6;
+  color: #5E412F;
 }

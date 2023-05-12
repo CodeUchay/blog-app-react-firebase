@@ -6,19 +6,19 @@ function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
   const postsCollectionRef = collection(db, "posts");
 
- /* useEffect(() => {
+  const deletePost = async (id) => {
+    const postDoc = doc(db, "posts", id);
+    await deleteDoc(postDoc);
+  };
+  useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef);
       setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
 
     getPosts();
-  }, [deletePost]);*/
+  }, [deletePost]);
 
-  const deletePost = async (id) => {
-    const postDoc = doc(db, "posts", id);
-    await deleteDoc(postDoc);
-  };
   return (
     <div className="homePage">
       {postLists.map((post) => {
@@ -29,7 +29,7 @@ function Home({ isAuth }) {
                 <h1> {post.title}</h1>
               </div>
               <div className="deletePost">
-                {isAuth && post.author.id === auth.currentUser.uid && (
+              {isAuth && post.author && post.author.id === auth.currentUser.uid && (
                   <button
                     onClick={() => {
                       deletePost(post.id);
@@ -42,7 +42,8 @@ function Home({ isAuth }) {
               </div>
             </div>
             <div className="postTextContainer"> {post.postText} </div>
-            <h3>@{post.author.name}</h3>
+            {post.author && <div> <h3>@{post.author.name}</h3><img src={post.author.photoURL} alt=""></img> </div>}
+
           </div>
         );
       })}

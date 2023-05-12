@@ -26,11 +26,11 @@ function App() {
         <Link to="/"> <FaBook/> Uche's Diary </Link>
         <div>
         {!isAuth ? (
-          <Link to="/login"> <button> Login </button> </Link>
+          <Link to="/login"> <button className="loginBtn"> Login </button> </Link>
         ) : (
           <>
             <Link to="/createpost"> Create Post </Link>
-            <button onClick={signUserOut}> Log Out</button>
+            <button className="loginBtn" onClick={signUserOut}> Log Out</button>
           </>
         )}
         </div>
