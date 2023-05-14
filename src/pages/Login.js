@@ -8,8 +8,10 @@ function Login({ setIsAuth }) {
 
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider).then((result) => {
+      //Store data into local storage. can be viewed on web application
       localStorage.setItem("isAuth", true);
       setIsAuth(true);
+      //redirect to homepage after login 
       navigate("/");
     });
   };

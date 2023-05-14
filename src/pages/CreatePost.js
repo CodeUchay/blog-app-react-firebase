@@ -7,10 +7,12 @@ function CreatePost({ isAuth }) {
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
 
+  //refrence collection in database
   const postsCollectionRef = collection(db, "posts");
   let navigate = useNavigate();
 
   const createPost = async () => {
+    //add doc to database
     await addDoc(postsCollectionRef, {
       title,
       postText,

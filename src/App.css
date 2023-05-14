@@ -20,9 +20,13 @@ nav {
   align-items: center;
   color: white;
   text-decoration: none;
-
+  position: fixed;
+  top: 0;
+  width: 95%;
 }
-
+main {
+  margin-top: 50px; 
+}
 a {
   color: white;
   text-decoration: none;
@@ -38,13 +42,13 @@ a {
 }
 
 .cpContainer {
-  width: 500px;
+  width: 600px;
   height: auto;
   padding: 20px;
   margin-top: 30px;
   background-color: #5E412F;
   border-radius: 12px;
-  color: rgb(5, 0, 0);
+  color: rgb(255, 250, 250);
   display: flex;
   flex-direction: column;
 }
@@ -55,6 +59,7 @@ a {
 
 .cpContainer label {
   font-size: 25px;
+  font-weight: 500;
 }
 
 .cpContainer button {
@@ -64,7 +69,7 @@ a {
 }
 
 .cpContainer .inputGp {
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -73,10 +78,14 @@ a {
 .inputGp textarea {
   font-size: 18px;
   border: none;
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 5px;
+  resize: none;
 }
-
+input:focus, input:active, input:hover textarea:focus, textarea:active, textarea:hover {
+  outline: none;
+  border: none;
+}
 .inputGp input {
   height: 40px;
 }
@@ -167,10 +176,9 @@ textarea {
 }
 
 .homePage .post {
-  width: 600px;
+  width: 700px;
   height: auto;
-  max-height: 600px;
-  background-color: rgb(250, 250, 250);
+  background-color: #fffbf0;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin: 20px;
   padding: 20px;
@@ -180,11 +188,12 @@ textarea {
 .post .postHeader {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
 .postHeader .title {
-  flex: 50%;
+  flex: 70%;
 }
 
 .postHeader .deletePost {
@@ -202,6 +211,7 @@ textarea {
   cursor: pointer;
 }
 
+
 .post .postTextContainer {
   word-wrap: break-word;
   height: auto;
@@ -209,6 +219,22 @@ textarea {
   width: 100%;
   overflow: hidden;
   overflow-y: auto;
+}
+
+.author-info {
+  display: flex;
+  align-items: center; 
+}
+
+.author-info img {
+  width: 30px;
+  height: 30px; 
+  border-radius: 50%; 
+  margin-right: 10px; 
+}
+
+.author-info h3 {
+  font-size: 18px; 
 }
 
 .loginBtn {

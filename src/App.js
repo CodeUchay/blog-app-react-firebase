@@ -1,6 +1,5 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-
 import Home from "./pages/Home";
 import CreatePost from "./pages/CreatePost";
 import Login from "./pages/Login";
@@ -16,6 +15,7 @@ function App() {
     signOut(auth).then(() => {
       localStorage.clear();
       setIsAuth(false);
+      //cant use use navigate outside router
       window.location.pathname = "/login";
     });
   };
@@ -27,6 +27,7 @@ function App() {
         <div>
         {!isAuth ? (
           <Link to="/login"> <button className="loginBtn"> Login </button> </Link>
+          //Only see create post when logged in
         ) : (
           <>
             <Link to="/createpost"> Create Post </Link>
@@ -35,11 +36,13 @@ function App() {
         )}
         </div>
       </nav>
+      <main>
       <Routes>
         <Route path="/" element={<Home isAuth={isAuth} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
       </Routes>
+      </main>
     </Router>
   );
 }
